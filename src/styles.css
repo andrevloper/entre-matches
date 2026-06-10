@@ -1,0 +1,20 @@
+﻿<style>
+  html{scroll-behavior:smooth}
+  body{font-family:Montserrat,sans-serif}
+  .font-display{font-family:"Playfair Display",serif}
+  .glow{background:radial-gradient(circle at 50% 40%,rgba(212,154,106,.38),rgba(184,115,51,.12) 42%,transparent 70%)}
+  .cta{background:linear-gradient(135deg,#C0202A 0%,#8E1620 100%)}
+  .cta:hover{filter:brightness(1.08)}
+  @keyframes pulse-cta{0%,100%{box-shadow:0 14px 34px -10px rgba(192,32,42,.6),0 0 0 0 rgba(212,154,106,.5)}50%{box-shadow:0 14px 34px -10px rgba(192,32,42,.6),0 0 0 14px rgba(212,154,106,0)}}
+  .cta-pulse{animation:pulse-cta 2.6s infinite}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  details>summary{list-style:none;cursor:pointer}
+  details>summary::-webkit-details-marker{display:none}
+  details[open] .faq-icon{transform:rotate(45deg)}
+  .divider{display:inline-flex;align-items:center;gap:.6rem;color:#B87333}
+  .divider::before,.divider::after{content:"";height:1px;width:46px;background:linear-gradient(90deg,transparent,#B87333)}
+  .divider::after{background:linear-gradient(90deg,#B87333,transparent)}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1!important;transform:none!important}.cta-pulse{animation:none}html{scroll-behavior:auto}
+  }
