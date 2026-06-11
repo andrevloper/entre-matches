@@ -364,7 +364,7 @@
       </div>
 
       <!-- order bumps -->
-      <div class="p-6 sm:p-8 space-y-4 bg-cream-2/50">
+      <div id="bump-section" class="p-6 sm:p-8 space-y-4 bg-cream-2/50">
         <p class="text-[11px] font-bold uppercase tracking-widest text-ink/50 text-center">Aprofunde por R$10 — escolha o seu (ou leve os dois)</p>
 
         <label class="flex gap-4 items-center bg-white rounded-2xl p-4 ring-2 ring-copper/40 border-2 border-dashed border-copper/40 cursor-pointer hover:ring-copper transition">
@@ -394,6 +394,12 @@
           <span class="text-ink/60 font-medium">Total hoje</span>
           <span id="total" class="font-display text-3xl font-bold">R$37</span>
         </div>
+        <p class="text-[11px] font-bold uppercase tracking-widest text-ink/40 text-center mb-3">Escolha a plataforma</p>
+        <div class="flex gap-3 mb-5">
+          <button type="button" data-plat="hotmart" class="plat-btn flex-1 rounded-xl border-2 border-ink/15 py-3 text-sm font-bold text-ink/50 transition-all hover:border-copper/50 hover:text-ink">Hotmart</button>
+          <button type="button" data-plat="eduzz" class="plat-btn flex-1 rounded-xl border-2 border-copper bg-copper/10 py-3 text-sm font-bold text-copper transition-all">Eduzz</button>
+        </div>
+        <p id="nota-hotmart" class="hidden text-[11px] text-center text-ink/45 bg-ink/5 rounded-lg px-3 py-2 mb-4">Este combo n&atilde;o est&aacute; dispon&iacute;vel via Hotmart. Redirecionando para o guia principal.</p>
         <a id="btn-comprar" href="https://chk.eduzz.com/7WXGVVX40A" class="cta cta-pulse flex items-center justify-center gap-2 text-white font-bold text-base sm:text-lg rounded-2xl py-4 px-6 w-full">
           Comprar agora &rarr;
         </a>
