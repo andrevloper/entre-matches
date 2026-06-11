@@ -7,8 +7,10 @@ var plataformaAtiva = 'eduzz';
 
 var LINKS = {
   hotmart: {
-    '':        'https://pay.hotmart.com/K106274558U',
-    'feminino':'https://pay.hotmart.com/L106275018N'
+    '':                  'https://pay.hotmart.com/K106274558U',
+    'feminino':          'https://pay.hotmart.com/L106275018N',
+    'masculino':         'https://pay.hotmart.com/W106275453U',
+    'feminino+masculino':'https://pay.hotmart.com/B106275504O'
   },
   eduzz: {
     '':                  'https://chk.eduzz.com/7WXGVVX40A',
@@ -35,9 +37,6 @@ function upd() {
   var links = LINKS[plataformaAtiva];
   btnComprar.href = links[chave] || links[''];
 
-  // Nota quando combo selecionado não tem link no Hotmart
-  var semLink = plataformaAtiva === 'hotmart' && chave && !links[chave];
-  notaHotmart.classList.toggle('hidden', !semLink);
 }
 
 function setPlataforma(plat) {
@@ -45,10 +44,10 @@ function setPlataforma(plat) {
 
   document.querySelectorAll('.plat-btn').forEach(function(btn) {
     var ativo = btn.dataset.plat === plat;
-    btn.style.borderColor = ativo ? 'var(--color-copper, #b87333)' : '';
-    btn.style.backgroundColor = ativo ? 'rgba(184,115,51,0.1)' : '';
-    btn.style.color = ativo ? 'var(--color-copper, #b87333)' : '';
-    btn.style.fontWeight = ativo ? '700' : '500';
+    var cor = btn.style.getPropertyValue('--plat-color') || '#888';
+    btn.style.borderColor = ativo ? cor : '#e5e7eb';
+    btn.style.backgroundColor = ativo ? cor + '1a' : '';
+    btn.style.boxShadow = ativo ? '0 0 0 3px ' + cor + '33' : '';
   });
 
   upd();
