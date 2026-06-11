@@ -59,7 +59,7 @@ document.querySelectorAll('.plat-btn').forEach(function(btn) {
 
 bumpsEl.forEach(function(b) { b.addEventListener('change', upd); });
 
-setPlataforma('eduzz');
+setPlataforma('hotmart');
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
