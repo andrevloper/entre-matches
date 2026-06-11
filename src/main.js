@@ -1,9 +1,8 @@
 var BASE = 37;
 var bumpsEl = document.querySelectorAll('.bump');
 var totalEl = document.getElementById('total');
-var btnComprar = document.getElementById('btn-comprar');
-var notaHotmart = document.getElementById('nota-hotmart');
-var plataformaAtiva = 'eduzz';
+var btnHotmart = document.getElementById('btn-hotmart');
+var btnEduzz = document.getElementById('btn-eduzz');
 
 var LINKS = {
   hotmart: {
@@ -34,32 +33,13 @@ function upd() {
   totalEl.textContent = 'R$' + total;
 
   var chave = selecionados.sort().join('+');
-  var links = LINKS[plataformaAtiva];
-  btnComprar.href = links[chave] || links[''];
-
+  btnHotmart.href = LINKS.hotmart[chave] || LINKS.hotmart[''];
+  btnEduzz.href   = LINKS.eduzz[chave]   || LINKS.eduzz[''];
 }
-
-function setPlataforma(plat) {
-  plataformaAtiva = plat;
-
-  document.querySelectorAll('.plat-btn').forEach(function(btn) {
-    var ativo = btn.dataset.plat === plat;
-    var cor = btn.style.getPropertyValue('--plat-color') || '#888';
-    btn.style.borderColor = ativo ? cor : '#e5e7eb';
-    btn.style.backgroundColor = ativo ? cor + '1a' : '';
-    btn.style.boxShadow = ativo ? '0 0 0 3px ' + cor + '33' : '';
-  });
-
-  upd();
-}
-
-document.querySelectorAll('.plat-btn').forEach(function(btn) {
-  btn.addEventListener('click', function() { setPlataforma(this.dataset.plat); });
-});
 
 bumpsEl.forEach(function(b) { b.addEventListener('change', upd); });
 
-setPlataforma('hotmart');
+upd();
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
